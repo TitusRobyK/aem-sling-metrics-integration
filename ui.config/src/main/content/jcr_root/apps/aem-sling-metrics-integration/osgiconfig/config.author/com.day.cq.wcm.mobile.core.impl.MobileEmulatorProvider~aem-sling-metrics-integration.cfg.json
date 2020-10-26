@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "aem-sling-metrics-integration/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}
