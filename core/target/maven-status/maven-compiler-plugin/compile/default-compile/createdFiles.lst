@@ -1,0 +1,11 @@
+com\aem\sling\metrics\integration\core\models\HelloWorldModel.class
+com\aem\sling\metrics\integration\core\servlets\SimpleServlet.class
+com\aem\sling\metrics\integration\core\filters\LoggingFilter.class
+com\aem\sling\metrics\integration\core\filters\package-info.class
+com\aem\sling\metrics\integration\core\listeners\package-info.class
+com\aem\sling\metrics\integration\core\listeners\SimpleResourceListener.class
+com\aem\sling\metrics\integration\core\schedulers\SimpleScheduledTask$Config.class
+com\aem\sling\metrics\integration\core\schedulers\package-info.class
+com\aem\sling\metrics\integration\core\models\package-info.class
+com\aem\sling\metrics\integration\core\servlets\package-info.class
+com\aem\sling\metrics\integration\core\schedulers\SimpleScheduledTask.class

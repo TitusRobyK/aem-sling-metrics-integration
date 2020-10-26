@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>AEM Sling Metrics Integration - All</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="name">aem-sling-metrics-integration.all</entry>
+<entry key="created">2020-10-26T13:23:12.042Z</entry>
+<entry key="groupId">com.aem.sling.metrics.integration</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">container</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="cloudManagerTarget">all</entry>
+<entry key="group">com.aem.sling.metrics.integration</entry>
+<entry key="description">All content package for AEM Sling Metrics Integration</entry>
+<entry key="artifactId">aem-sling-metrics-integration.all</entry>
+</properties>

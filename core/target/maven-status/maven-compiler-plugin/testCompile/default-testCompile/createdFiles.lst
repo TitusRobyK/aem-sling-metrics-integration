@@ -1,0 +1,5 @@
+com\aem\sling\metrics\integration\core\listeners\SimpleResourceListenerTest.class
+com\aem\sling\metrics\integration\core\models\HelloWorldModelTest.class
+com\aem\sling\metrics\integration\core\schedulers\SimpleScheduledTaskTest.class
+com\aem\sling\metrics\integration\core\filters\LoggingFilterTest.class
+com\aem\sling\metrics\integration\core\servlets\SimpleServletTest.class

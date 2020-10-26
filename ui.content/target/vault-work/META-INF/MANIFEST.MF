@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Implementation-Title: AEM Sling Metrics Integration - UI content
+Content-Package-Roots: /conf/aem-sling-metrics-integration,/content/ae
+ m-sling-metrics-integration,/content/dam/aem-sling-metrics-integratio
+ n,/content/experience-fragments/aem-sling-metrics-integration
+Implementation-Version: 1.0.0-SNAPSHOT
+Content-Package-Dependencies-Locations: com.aem.sling.metrics.integrat
+ ion:aem-sling-metrics-integration.ui.apps:1.0.0-SNAPSHOT=maven:com.ae
+ m.sling.metrics.integration:aem-sling-metrics-integration.ui.apps:1.0
+ .0-SNAPSHOT:zip
+Content-Package-Dependencies: com.aem.sling.metrics.integration:aem-sl
+ ing-metrics-integration.ui.apps:1.0.0-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Content-Package-Type: content
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.4
+Content-Package-Id: com.aem.sling.metrics.integration:aem-sling-metric
+ s-integration.ui.content:1.0.0-SNAPSHOT
+Content-Package-Description: UI content package for AEM Sling Metrics 
+ Integration
+
