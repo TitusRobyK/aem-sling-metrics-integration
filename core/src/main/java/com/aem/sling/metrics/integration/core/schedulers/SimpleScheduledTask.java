@@ -15,13 +15,19 @@
  */
 package com.aem.sling.metrics.integration.core.schedulers;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aem.sling.metrics.integration.core.service.SeriesGeneratorService;
 
 /**
  * A simple demo for cron-job like tasks that get executed regularly.
@@ -31,6 +37,9 @@ import org.slf4j.LoggerFactory;
 @Designate(ocd=SimpleScheduledTask.Config.class)
 @Component(service=Runnable.class)
 public class SimpleScheduledTask implements Runnable {
+	
+	@Reference
+	private SeriesGeneratorService seriesGenerateService;
 
     @ObjectClassDefinition(name="A scheduled task",
                            description = "Simple demo for cron-job like task with properties")
@@ -55,11 +64,14 @@ public class SimpleScheduledTask implements Runnable {
     @Override
     public void run() {
         logger.debug("SimpleScheduledTask is now running, myParameter='{}'", myParameter);
+        ArrayList<Integer> seriesLs= seriesGenerateService.gererateSeries(0, 1, 100);
+        logger.trace( seriesLs.stream().map(Object::toString).collect(Collectors.joining("\n")));
     }
 
     @Activate
     protected void activate(final Config config) {
         myParameter = config.myParameter();
+        run();
     }
 
 }
