@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.3.0" localization="OSGI-INF/l10n/com.aem.sling.metrics.integration.core.schedulers.config.SimpleSchedulerConfig">
-  <OCD id="com.aem.sling.metrics.integration.core.schedulers.config.SimpleSchedulerConfig" name="Simple Scheduler Configuration" description="Configure the scheduler clock"/>
-</metatype:MetaData>
