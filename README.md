@@ -4,7 +4,7 @@ Simple project showcasing AEM &amp; [Sling-metrics](https://sling.apache.org/doc
 
 ### Steps
 
-⋅⋅* Get the latest aem archetype version from the [Adobe-AEM Archetype Repo](https://github.com/adobe/aem-project-archetype). At the time of creation of this project, Command that has been used to create this project is 
+* Get the latest aem archetype version from the [Adobe-AEM Archetype Repo](https://github.com/adobe/aem-project-archetype). At the time of creation of this project, Command that has been used to create this project is 
 ```
 mvn -B archetype:generate \
  -D archetypeGroupId=com.adobe.aem \
@@ -20,11 +20,11 @@ mvn -B archetype:generate \
  -D includeCommerce=n \
  -D datalayer=n
  ```
-⋅⋅* Run the following maven command to successfully download the dependencies and to deploy the same in to the local aem 6.5 instance
+* Run the following maven command to successfully download the dependencies and to deploy the same in to the local aem 6.5 instance
 ```
 mvn clean install -PautoInstallPackage -Padobe-public
 ```
-⋅⋅* In the pom.xml , add the following dependencies
+* In the pom.xml , add the following dependencies
 ```
 <dependency>
     <groupId>org.apache.sling</groupId>
