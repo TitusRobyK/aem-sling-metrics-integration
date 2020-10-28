@@ -12,6 +12,7 @@ import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.aem.sling.metrics.integration.core.service.CaptureMetricsService;
 import com.aem.sling.metrics.integration.core.service.SeriesGeneratorService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -28,12 +29,16 @@ public class SeriesGeneratorServlet extends SlingAllMethodsServlet {
 	int limit;
 
 	@Reference
+	private CaptureMetricsService captureMetricsService;
+	
+	@Reference
 	private SeriesGeneratorService seriesGenerateService;
 
 	@Override
 	protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
 			throws ServletException, IOException {
 		ArrayList<Integer> seriesLs = new ArrayList<Integer>();
+		captureMetricsService.captureMetrics(this.getClass().getName());
 		try {
 
 			firstNumber = verifyAndSetParameter(request, "firstNumber", 0);

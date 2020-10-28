@@ -27,6 +27,7 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.aem.sling.metrics.integration.core.service.CaptureMetricsService;
 import com.aem.sling.metrics.integration.core.service.SeriesGeneratorService;
 
 /**
@@ -37,6 +38,9 @@ import com.aem.sling.metrics.integration.core.service.SeriesGeneratorService;
 @Designate(ocd=SimpleScheduledTask.Config.class)
 @Component(service=Runnable.class)
 public class SimpleScheduledTask implements Runnable {
+	
+	@Reference
+	private CaptureMetricsService captureMetricsService;
 	
 	@Reference
 	private SeriesGeneratorService seriesGenerateService;
@@ -64,6 +68,7 @@ public class SimpleScheduledTask implements Runnable {
     @Override
     public void run() {
         logger.debug("SimpleScheduledTask is now running, myParameter='{}'", myParameter);
+        captureMetricsService.captureMetrics(this.getClass().getName());
         ArrayList<Integer> seriesLs= seriesGenerateService.gererateSeries(0, 1, 100);
         logger.debug( seriesLs.stream().map(Object::toString).collect(Collectors.joining("\n")));
     }
