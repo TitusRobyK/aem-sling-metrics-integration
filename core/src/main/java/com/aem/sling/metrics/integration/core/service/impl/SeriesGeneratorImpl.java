@@ -62,11 +62,11 @@ public class SeriesGeneratorImpl implements SeriesGeneratorService {
 		counter = metricsService.counter(className + " Test Counter");
 		//timer = metricsService.timer(className + " Timer");
 		//meter = metricsService.meter(className + " Meter");
-		//histogram = metricsService.histogram(className + " Histogram");
+		histogram = metricsService.histogram(className + " Histogram");
 		counter.increment();
 		//timer.time();
 		//meter.mark();
-		//histogram.update(1);
+		histogram.update(1);
 	}
 
 }
