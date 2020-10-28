@@ -3,7 +3,10 @@ package com.aem.sling.metrics.integration.core.service.impl;
 import java.util.ArrayList;
 
 import org.apache.sling.commons.metrics.Counter;
+import org.apache.sling.commons.metrics.Histogram;
+import org.apache.sling.commons.metrics.Meter;
 import org.apache.sling.commons.metrics.MetricsService;
+import org.apache.sling.commons.metrics.Timer;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -17,11 +20,17 @@ public class SeriesGeneratorImpl implements SeriesGeneratorService {
 
 	private Counter counter;
 
+	private Meter meter;
+
+	private Timer timer;
+
+	private Histogram histogram;
+
 	@Override
 	public ArrayList<Integer> gererateSeries(int firstNumber, int secondNumber, int limit) {
-		
-		captureMetrics();
-		
+
+		captureMetrics(this.getClass().getName());
+
 		firstNumber = verifyAndSetParameter(firstNumber, Integer.MAX_VALUE / 2, 0);
 		secondNumber = verifyAndSetParameter(secondNumber, Integer.MAX_VALUE / 2, 1);
 		limit = verifyAndSetParameter(limit, 500, 500);
@@ -49,9 +58,15 @@ public class SeriesGeneratorImpl implements SeriesGeneratorService {
 		}
 	}
 
-	private void captureMetrics() {
-		counter = metricsService.counter("Series Generator Session Counter");
+	private void captureMetrics(String className) {
+		counter = metricsService.counter(className + " Test Counter");
+		//timer = metricsService.timer(className + " Timer");
+		//meter = metricsService.meter(className + " Meter");
+		//histogram = metricsService.histogram(className + " Histogram");
 		counter.increment();
+		//timer.time();
+		//meter.mark();
+		//histogram.update(1);
 	}
 
 }

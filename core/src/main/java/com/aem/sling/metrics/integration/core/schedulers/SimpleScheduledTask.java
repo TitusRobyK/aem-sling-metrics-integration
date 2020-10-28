@@ -65,7 +65,7 @@ public class SimpleScheduledTask implements Runnable {
     public void run() {
         logger.debug("SimpleScheduledTask is now running, myParameter='{}'", myParameter);
         ArrayList<Integer> seriesLs= seriesGenerateService.gererateSeries(0, 1, 100);
-        logger.trace( seriesLs.stream().map(Object::toString).collect(Collectors.joining("\n")));
+        logger.debug( seriesLs.stream().map(Object::toString).collect(Collectors.joining("\n")));
     }
 
     @Activate
